@@ -19,5 +19,13 @@ A mai világban már teljesen evidens az, hogy már majdnem minden háztartásba
 # 6. Igényelt üzleti folyamatok
 
 # 7. Követelménylista
+| Id | Modul | Név | Leírás |
+| :---: | --- | --- | --- |
+| K1 | Regisztráció | Regisztráció | Regisztrációs űrlap. |
+| K2 | Bejelentkezés | Bejelentkezés | Bejelentkezési űrlap. |
+| K3 | Kurzus létrehozás | Kurzus létrehozás | Új kurzus készítésésére szolgáló űrlap. |
+| K4 | Kurzus lista | Kurzus lista | Adatbázisban található kurzusok kilistázása, fel- és lejelentkezési lehetőség. |
+| K5 | Kurzus módosítás | Kurzus módosítás | Birtokolt kurzusok frissítése, törlése. |
+| K6 | Feladat végző | Feladat végző | Kurzusra feltöltött (házi- vagy dolgozat) feladat kitötését rögzítő oldal. |
 
 # 8. Fogalomtár
