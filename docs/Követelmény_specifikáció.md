@@ -30,3 +30,8 @@ A mai világban már teljesen evidens az, hogy már majdnem minden háztartásba
 | K6 | Feladat végző | Feladat végző | Kurzusra feltöltött (házi- vagy dolgozat) feladat kitötését rögzítő oldal. |
 
 # 8. Fogalomtár
+E-learning: E-learningnek nevezhető minden olyan tanítási és tanulási forma, amiben a tananyag feldolgozásához, bemutatásához: a szemléltetéshez vagy akár a kommunikációhoz digitális médiumokat használunk.
+Weboldal: A weblap (más szóval weboldal) egy olyan számítógépes dokumentum, mely megfelel a World Wide Web számára, és alkalmas arra, hogy egy webböngésző megjelenítse.
+Platform: Az informatikában platform alatt olyan hardver- és/vagy szoftverkörnyezetet értünk, amely meghatározza, hogy az adott számítógépen milyen egyéb programok használhatók.
+Nyílt forráskódú: A szabad vagy nyílt forráskódú szoftverek (FLOSS) szabadon használható, másolható, terjeszthető, tanulmányozható és módosítható számítógépes programok.
+Kurzus: A kurzus az a keret, amelyben a hallgatók meghatározott rend (előadás, gyakorlat, házi feladat, stb.) szerint gyarapítják tudásukat, és arról számot is adnak.
