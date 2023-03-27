@@ -9,3 +9,5 @@
 # 5. Használati esetek
 
 # 6. Igényelt üzleti folyamatok
+
+# 7. Jelenlegi üzleti folyamatok
