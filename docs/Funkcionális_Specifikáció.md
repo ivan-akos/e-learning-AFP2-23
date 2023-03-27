@@ -1,1 +1,1 @@
-
+# 1. Jelenlegi Helyzet
