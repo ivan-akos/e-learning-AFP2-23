@@ -7,3 +7,5 @@
 # 4. Forgatókönyvek
 
 # 5. Használati esetek
+
+# 6. Igényelt üzleti folyamatok
