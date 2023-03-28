@@ -1,4 +1,7 @@
 # 1. Áttekintés
+Az e-learning rendszerek olyan oktatási platformok, amelyek lehetővé teszik az online oktatást és tanulást. Ezek a rendszerek lehetővé teszik a tanulók számára, hogy bárhol és bármikor hozzáférjenek az oktatási anyagokhoz és a tanulási lehetőségekhez, amelyekre éppen szükségük van.
+Előnyei közé tartozik a rugalmasság, amely lehetővé teszi a tanulók számára, hogy saját ütemükben és időbeosztásuknak megfelelően haladjanak.
+Célunk egy ilyen elearning rendszer kifejlesztése az EKKE intézmény számára.
 
 # 2. Jelenlegi helyzet
 Az online e-learning weboldalak területén jelenleg is elérhető számos szoftver és megoldás, amelyek segíthetik az oktatási folyamatot. Néhány példa a jelenlegi online oktatási platformokra:
