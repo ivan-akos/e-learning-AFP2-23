@@ -21,5 +21,7 @@ Zárthelyi dolgozat: A zárthelyi dolgozat egy olyan írásbeli vizsga, amelyet 
 # 6. Igényelt üzleti folyamatok
 
 # 7. Jelenlegi üzleti folyamatok
+Az egyetem egy elearning rendszert megrendelt, amely képes megállni a helyét a szélesebb körben elterjedt rendszerekkel szemben. A forrása a megrendelőt illeti majd, és mivel igényt tartanak a tovább fejlesztésre, bővythetőnek kell lennie. Elvárás az, hogy a kód bázis egyszerűen felhasználható legyen, hiszen az oldal működtetésére nem nekünk kell majd felkészülni, hanem a megrendelő moderálási pozíciókba olyan embereket terveznek kinevezni, akik nem rendelkeznek programozói háttérrel. Minden felmerülő CRUD műveletre biztosítanunk kell felhasználó barát grafikus felületet.
+A projekt teljesítésére 2 hónap áll majd rendelkezésre.
 
 # 8. Vágyálomrendszer
