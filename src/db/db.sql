@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS elearning;
+CREATE DATABASE elearning;
