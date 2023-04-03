@@ -47,6 +47,7 @@ MySql relációs adatbázis.
 
 ## 8. Adatbázis terv
 ![](media/db.png)
+
 Lásd: media/elearning.mwb. 
 
 ## 9. Implementációs terv
