@@ -1,5 +1,6 @@
 # Rendszerterv
 ## 1. A rendszer célja
+A tervezett rendszerünk célja egy online e-learning platform létrehozása, amely lehetővé teszi a felhasználók számára, hogy különböző kurzusokat vegyenek igénybe, és interaktív felületen keresztül sajátítsák el azok tartalmát. A rendszer lehetőséget nyújt a felhasználók számára a kurzusok böngészésére, regisztrációra, belépésre, valamint a kurzusok végigjátszására, sikeres elvégzése esetén pedig az elért eredmények és oklevelek megosztására is. A rendszer a mai kor követelményeinek megfelelő, modern és könnyen kezelhető felületet biztosít a felhasználók számára.
 
 ## 2. Projektterv
 
