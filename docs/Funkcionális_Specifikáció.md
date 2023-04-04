@@ -19,6 +19,8 @@ Regisztráció: Az e-learning felület megnyitása után a kezdőlapon találhat
 
 Bejelentkezés: Az e-learning oldal megnyitása után a navigációs sávon a bejelentkezés gomb használatával tudunk a korábban már létrehozott fiókunkba belépni. A bejelentkezés gombra kattintva megadhatjuk felhasználónevünk, valamint jelszavunk. Helyes adatokat megadva és a Bejelentkezés gombra kattintva a fiókunkba lépünk be.
 
+Tananyagok kezelése oktatóként: Tanár jogosultságú felhasználóval bejelentkezve, a tananyagok menüpontban lehetőségünk van új tananyagokat létrehozni és meglévő, általunk létrehozott tananyagokat átírni,szerkeszteni.
+
 
 # 5. Használati esetek
 1. Egy kívül álló az oldalra téved. Rövid tájékoztatót kap arról mi is ez az oldal.
