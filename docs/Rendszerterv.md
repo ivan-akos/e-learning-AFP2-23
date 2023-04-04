@@ -5,6 +5,13 @@ A tervezett rendszerünk célja egy online e-learning platform létrehozása, am
 ## 2. Projektterv
 
 ### 2.1 Projektszerepkörök, felelőségek:
+Iván Ákos - front end; UX
+
+Csanádi Balázs - front end; UI
+
+Kovács Dávid - back end; adatbázis
+
+Bárány Gergő - back end; tesztelés
      
 ### 2.2 Projektmunkások és felelőségek:
      
