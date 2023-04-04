@@ -30,6 +30,7 @@ Az egyetem egy elearning rendszert megrendelt, amely képes megállni a helyét 
 A projekt teljesítésére 2 hónap áll majd rendelkezésre.
 
 # 7. Igényelt üzleti folyamatok
+Az e-learning rendszerben három kölönböző belentkezési felület lesz elérhető : adminisztrátor, tanár és diák. Az alkalmazásunk a követelmény listában feltüntetett funkcionális és nem funkcionális követelményeknek megfelelően fog létrejönni. Az adminisztrátoroknak és tanároknak biztosítunk egy regisztrációs felületet, a diákokat az intézménybe való jelentkezésük és személyes adataik felhasználásával vesszük fel a rendszerbe. A felhasználókat szerepkörük alapján csoportosítjuk.
 
 # 8. Vágyálomrendszer
 
