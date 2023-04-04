@@ -23,6 +23,8 @@ Tananyagok kezelése oktatóként: Tanár jogosultságú felhasználóval bejele
 
 Tesztek kezelése tanulóként: tanuló felhasználóval bejelentkezve a tesztek menüpontban azon tananyagok tesztjeit/kérdéseit nézhetjük meg és oldhatjuk meg, amelyekhez korábban hozzáférést kaptunk.
 
+Tesztek kezelése oktatóként: oktató fiókba bejelentkezve, az általunk létrehozott tananyagokhoz lehetőségünk van tesztek/kérdések feltöltésére, a tesztek menüpontban.
+
 
 # 5. Használati esetek
 1. Egy kívül álló az oldalra téved. Rövid tájékoztatót kap arról mi is ez az oldal.
