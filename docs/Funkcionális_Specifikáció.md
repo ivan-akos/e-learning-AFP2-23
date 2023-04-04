@@ -15,6 +15,8 @@ Zárthelyi dolgozat: A zárthelyi dolgozat egy olyan írásbeli vizsga, amelyet 
 
 
 # 4. Forgatókönyvek
+Regisztráció: Az e-learning felület megnyitása után a kezdőlapon található regisztráció gombra kattintva tudunk regisztrálni. Ez után megadhatjuk a szükséges adatokat, valamint kiválaszthatjuk, hogy oktatóként vagy tanulóként kívánunk regisztrálni. A regisztráció gombra kattintva a kezdőlap jelenik meg, amennyiben helyes adatokat adtunk meg.
+
 
 # 5. Használati esetek
 1. Egy kívül álló az oldalra téved. Rövid tájékoztatót kap arról mi is ez az oldal.
