@@ -21,6 +21,8 @@ Bejelentkezés: Az e-learning oldal megnyitása után a navigációs sávon a be
 
 Tananyagok kezelése oktatóként: Tanár jogosultságú felhasználóval bejelentkezve, a tananyagok menüpontban lehetőségünk van új tananyagokat létrehozni és meglévő, általunk létrehozott tananyagokat átírni,szerkeszteni.
 
+Tesztek kezelése tanulóként: tanuló felhasználóval bejelentkezve a tesztek menüpontban azon tananyagok tesztjeit/kérdéseit nézhetjük meg és oldhatjuk meg, amelyekhez korábban hozzáférést kaptunk.
+
 
 # 5. Használati esetek
 1. Egy kívül álló az oldalra téved. Rövid tájékoztatót kap arról mi is ez az oldal.
