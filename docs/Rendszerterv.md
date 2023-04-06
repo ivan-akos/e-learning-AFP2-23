@@ -87,5 +87,25 @@ Lásd: media/elearning.mwb.
 ## 9. Implementációs terv
 
 ## 10. Telepítési terv
+Alapértelmezett felhasználók és jelszavak:
+	+ mysql: elearning, passwd
+	+ django: admin, admin
+
+1. Adatbázis létrehozása
+	$ cd <elearing>/src/db/;
+	$ mysql -u root;
+	> source init.sql;
+2. Migráció
+	$ cd <elearing>/src/django/
+	$ python manage.py migrate
+3. Record felvitel
+	$ cd <elearing>/src/django/
+	$ python manage.py loaddata db_data.json
+
+Sikeresség hitelesítése:
+	$ cd <elearing>/src/django/
+	$ python manage.py runserver
+	+ Elérhetővé kell vállnia a test szervernek "http://127.0.0.1:8000"-n 
+	+ Az admin felületnek ("http://127.0.0.1:8000/admin") be kell engednie "admin"; "admin" adatok megadásával
 
 ## 11. Karbantartási terv
