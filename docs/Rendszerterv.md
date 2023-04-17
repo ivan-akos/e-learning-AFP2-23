@@ -74,6 +74,11 @@ A támogatott eszközök magukba foglalják a modern webböngészőket, mint pé
 ### 5.2 Menühierarchiák
 
 ## 6. Fizikai környezet
+- A projektek webalkalmazásként valósítjuk meg
+- Szabad felhasználású komponenseket használ
+Backend: Python Django: nyílt forráskódú, Python-alapú webes keretrendszer.
+Frontend: React ami egy nyílt forráskódú, JavaScript könyvtár.
+Adatbázis: Mysql
 
 ### 6.1 Hardver topológia
 
