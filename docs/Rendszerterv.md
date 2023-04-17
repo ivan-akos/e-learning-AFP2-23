@@ -20,11 +20,19 @@ Bárány Gergő - back end; tesztelés
 ### 2.4 Mérföldkövek:
 
 ## 3. Üzleti folyamatok modellje
-
+A projektünk célja egy e-learning platform webes felülettel, ami a megrendelő igényeihez megfelelően fog elkészülni. A rendszer létrehozásánál a Django-t használjuk backend részen,
+fortendnek pedig a Reactot választottuk.
+Adatbázisnak a MySQL-t használjuk. Az e-learning rendszernek rendelkeznie kell egy regisztrációs és egy bejelentkezési felülettettel. Itt a felhasználók adataik megadásával tudnak
+regisztrálni ezek után tudnak csak bejelentkezni. A felhasználók három különböző csoportba tartozhatnak: admin, oktatók és diákok(hallgatók). Az adminok kezelik az oktatókat, diákokat, illetve
+a kurzusokat. Újabb felhasználókat vesznek fel, vagy esetleg törölnek. Kurzusok esetén pedig újakat vesznek fel, meglévőeknél az adatokat módosítják, illetve törölni is lehet ezeket. 
+Az oktatók csak a kurzusokhoz férnek hozzá, amikből felvihetnek az adatbázisba újakat, módosíthatnak egy meglévőt, vagy ki is törölhetik (természetesen az utóbbi két esetben csak a saját
+maguk által létrehozottakat). Ezen kívül a diákokat hozzáadhatják az általuk létrehozott kurzusokhoz, illetve eltávolíthatják őket. A diákok megtekinthetik azokat a kurzusokat, amelynek
+tagjai, azokban teszteket tölthetnek ki, melyeknek eredményét azonnal láthatják. Mindezek alapján a cél egy online olyan felület létrehozása, amelyet bárhol, bármikor bárki el tud érni. 
+Ehhez tulajdonképpen internet kapcsolat szükséges és mivel manapság egyre több eszközön lehet netezni, ezért fontos az is, hogy minden eszközön megfelelően jelenjen meg és jól működjön.
 ### 3.1 Üzleti szereplők
-
-### 3.2 Üzleti folyamatok
-
+- admin
+- oktató
+- diák
 ## 4. Követelmények
 
 ### 4.1 Funkcionális követelmények
