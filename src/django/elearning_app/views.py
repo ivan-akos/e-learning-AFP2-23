@@ -10,3 +10,5 @@ def home(request):
 def courses(request):
     return render(request, 'courses.html')
 
+def signup(request):
+    return render(request, 'signup.html') 
