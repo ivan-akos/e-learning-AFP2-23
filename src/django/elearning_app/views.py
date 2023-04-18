@@ -12,3 +12,7 @@ def courses(request):
 
 def signup(request):
     return render(request, 'signup.html') 
+
+def about(request):
+    return render(request, 'about.html')
+
