@@ -56,7 +56,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `elearning`.`users_courses` ;
 
 CREATE TABLE IF NOT EXISTS `elearning`.`users_courses` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `user` INT NOT NULL,
   `course` INT NOT NULL,
   `is_pending` VARCHAR(45) NOT NULL DEFAULT '1',
@@ -82,7 +82,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `elearning`.`lessons` ;
 
 CREATE TABLE IF NOT EXISTS `elearning`.`lessons` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `course` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `nth` INT NOT NULL,
@@ -103,7 +103,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `elearning`.`media` ;
 
 CREATE TABLE IF NOT EXISTS `elearning`.`media` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `owner` INT NOT NULL,
   `data` BLOB NOT NULL,
   PRIMARY KEY (`id`),
