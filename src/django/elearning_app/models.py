@@ -137,7 +137,7 @@ class Users(models.Model):
 class Courses(models.Model):
     code = models.CharField(unique=True, max_length=11)
     name = models.CharField(max_length=45)
-    owner = models.ForeignKey('Users', models.DO_NOTHING, db_column='owner')
+    owner = models.ForeignKey('Users', models.CASCADE, db_column='owner')
 
     class Meta:
         managed = True
@@ -145,9 +145,8 @@ class Courses(models.Model):
 
 
 class UsersCourses(models.Model):
-    id = models.IntegerField(primary_key=True)
-    user = models.ForeignKey(Users, models.DO_NOTHING, db_column='user')
-    course = models.ForeignKey(Courses, models.DO_NOTHING, db_column='course')
+    user = models.ForeignKey(Users, models.CASCADE, db_column='user')
+    course = models.ForeignKey(Courses, models.CASCADE, db_column='course')
     is_pending = models.CharField(max_length=45)
 
     class Meta:
@@ -156,8 +155,7 @@ class UsersCourses(models.Model):
 
 
 class Lessons(models.Model):
-    id = models.IntegerField(primary_key=True)
-    course = models.ForeignKey(Courses, models.DO_NOTHING, db_column='course')
+    course = models.ForeignKey(Courses, models.CASCADE, db_column='course')
     name = models.CharField(max_length=45)
     nth = models.IntegerField()
     body = models.CharField(max_length=100, blank=True, null=True)
@@ -168,9 +166,8 @@ class Lessons(models.Model):
 
 
 class Media(models.Model):
-    id = models.IntegerField(primary_key=True)
-    owner = models.ForeignKey('Users', models.DO_NOTHING, db_column='owner')
-    data = models.TextField()
+    owner = models.ForeignKey('Users', models.CASCADE, db_column='owner')
+    data = models.BinaryField()
 
     class Meta:
         managed = True
