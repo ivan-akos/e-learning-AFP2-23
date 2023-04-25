@@ -12,3 +12,4 @@ src/django/elearning/__pycache__/__init__.cpython-311.pyc
 src/django/elearning/__pycache__/settings.cpython-311.pyc
 src/django/elearning/__pycache__/urls.cpython-311.pyc
 src/django/elearning/__pycache__/wsgi.cpython-311.pyc
+**/__pycache__/
