@@ -1,0 +1,49 @@
+from django.core.management.base import BaseCommand
+from django_seed import Seed
+from elearning_app.models import *
+import subprocess
+import string
+import hashlib
+import random
+import os
+
+class Command(BaseCommand):
+	help = 'Seed dummy data.'
+
+	media_dir = subprocess.check_output(['git', '-C', '.', 'rev-parse', '--show-toplevel']).decode("utf-8")[:-1]  + '/src/db/dummy_media/'
+	media = os.listdir(media_dir)
+	media_index = 0
+	def get_media(self, x):
+		swp = self.media_index
+		self.media_index += 1
+		with open(self.media_dir + self.media[swp], 'rb') as f:
+			return f.read()
+
+	def handle(self, *args, **options):
+		seeder = Seed.seeder()
+
+		seeder.add_entity(Users, 20, {
+			'name':	lambda x: seeder.faker.name(),
+			'neptun': lambda x: ''.join(random.choices(string.ascii_lowercase, k=6)),
+			'password': lambda x: ''.join(random.choices("0123456789abcdef", k=64))
+		})
+		seeder.add_entity(Users, 1, {
+			'name': 'Anon Nymous',
+			'neptun': 'aaaaaa',
+			'password': hashlib.sha256('passwd'.encode()).hexdigest()
+		})
+		#
+		seeder.add_entity(Courses, 10, {
+			'code': lambda x: 'EA' + ''.join(random.choices('0123456789', k=7))
+		})
+		#
+		seeder.add_entity(UsersCourses, 10)
+		#
+		seeder.add_entity(Lessons, 10)
+		#
+		seeder.add_entity(Media, len(self.media), {
+			'data': self.get_media
+		})
+
+
+		inserted_pks = seeder.execute()
