@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'elearning_app.apps.ElearningAppConfig',
+    'bootstrap5'
 ]
 
 MIDDLEWARE = [
