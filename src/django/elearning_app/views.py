@@ -1,5 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
+from .models import Courses
+
 
 def index(request):
     return home(request)
@@ -8,7 +10,9 @@ def home(request):
     return render(request, 'home.html')
 
 def courses(request):
-    return render(request, 'courses.html')
+    courses_list = Courses.objects.order_by("id")
+    context = {"courses_list":courses_list}
+    return render(request, 'courses.html',context)
 
 def signup(request):
     return render(request, 'signup.html') 
