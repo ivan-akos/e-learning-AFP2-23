@@ -1,9 +1,11 @@
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+import django.contrib.auth as auth
 from django.contrib import messages
 from django.db import IntegrityError
 from .models import Users
 import hashlib
+import pdb
 
 @csrf_exempt
 def register(request):
@@ -27,3 +29,16 @@ def register(request):
 		#
 		user.save()
 		messages.success(request, 'Registration success.')
+
+
+@csrf_exempt
+def login(request):
+	username = request.POST.get('neptun')
+	password = request.POST.get('password')
+	user = auth.authenticate(request, username=username, password=password)
+	if user is not None:
+		auth.login(request, user)
+		messages.success(request, 'Sikeres bejelentkezés.')
+	else:
+		messages.error(request, 'Sikertelen bejelentkezés.')
+		
