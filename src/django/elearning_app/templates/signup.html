@@ -1,5 +1,28 @@
 {% extends 'layout.html' %}
-
 {% block content %}
  this is the signup page
+ 	{% if messages %}
+		{% for message in messages %}
+			{% if message.tags == 'success' %}
+				<div class="alert alert-success" role="alert" style="color: green">
+					{{ message }}
+				</div>
+			{% elif message.tags == 'error' %}
+				<div class="alert alert-danger" role="alert" style="color: red">
+					{{ message }}
+				</div>
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+    <form method="post">
+	  {% csrf_token %}
+      <label for="neptun">Neptun:</label><br>
+      <input type="text" id="neptun" name="neptun" required><br>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" required><br>
+      <br>
+      <input type="submit" value="Register">
+    </form>
 {% endblock content %}

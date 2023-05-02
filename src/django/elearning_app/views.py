@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render,get_object_or_404
+from django.contrib import messages
 from .models import Courses
+from . import forms
 
 
 def index(request):
@@ -21,6 +23,8 @@ def course(request,course_id):
 
 
 def signup(request):
+    messages._queued_messages = []
+    forms.register(request)
     return render(request, 'signup.html') 
 
 def about(request):
