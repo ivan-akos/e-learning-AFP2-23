@@ -4,6 +4,8 @@ from django.contrib import messages
 from .models import Courses
 from . import forms
 
+def temp_logout(request):
+    return render(request, 'temp_logout.html')
 
 def index(request):
     return home(request)
@@ -27,8 +29,16 @@ def signup(request):
     forms.register(request)
     return render(request, 'signup.html') 
 
+def login(request):
+    messages._queued_messages = []
+    forms.login(request)
+    return render(request, 'login.html') 
+
 def about(request):
     return render(request, 'about.html')
 
 def contact(request):
     return render(request, 'contact.html')
+
+def login_wall(request):
+    return render(request, 'login_wall.html')
