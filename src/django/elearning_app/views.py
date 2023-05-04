@@ -27,6 +27,11 @@ def signup(request):
     forms.register(request)
     return render(request, 'signup.html') 
 
+def login(request):
+    messages._queued_messages = []
+    forms.login(request)
+    return render(request, 'login.html') 
+
 def about(request):
     return render(request, 'about.html')
 
