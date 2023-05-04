@@ -31,15 +31,15 @@
                                 <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
                             </ul><a class="btn btn-light ms-md-2" style="color: var(--custom-secondary-color)" role="button" href="/signup">Sign Up!</a>
                             <div class="dropdown">
-                                <a class="btn btn-secondary dropdown-toggle ms-md-2" style="background-color: var(--custom-secondary-color)" data-bs-toggle="dropdown" type="button">Login</a>
-                                <div class="dropdown-menu p-5 dropdown-menu-end" style="min-width: 300px;">
+                                <a class="btn btn-secondary {% comment %} dropdown-toggle {% endcomment %} ms-md-2" style="background-color: var(--custom-secondary-color)" {% comment %} data-bs-toggle="dropdown" {% endcomment %} type="button" href="/home">Login</a>
+                                {% comment %} <div class="dropdown-menu p-5 dropdown-menu-end" style="min-width: 300px;">
                                     <form class="text-center" method="post">
                                         <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email"></div>
                                         <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
                                         <div class="mb-3"><button class="btn btn-secondary d-block w-100" style="background-color: var(--custom-secondary-color);" type="submit">Login</button></div>
                                         <p class="text-muted">Forgot your password?</p>
                                     </form>
-                                </div>
+                                </div> {% endcomment %}
                             </div>
                         </div>
                     </div>
