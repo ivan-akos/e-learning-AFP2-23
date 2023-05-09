@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 from django_seed import Seed
 from elearning_app.models import *
+from django.contrib.auth.models import User
 import subprocess
 import string
 import hashlib
@@ -22,22 +23,20 @@ class Command(BaseCommand):
 	def handle(self, *args, **options):
 		seeder = Seed.seeder()
 
-		seeder.add_entity(Users, 20, {
-			'name':	lambda x: seeder.faker.name(),
-			'neptun': lambda x: ''.join(random.choices(string.ascii_lowercase, k=6)),
-			'password': lambda x: ''.join(random.choices("0123456789abcdef", k=64))
-		})
-		seeder.add_entity(Users, 1, {
-			'name': 'Anon Nymous',
-			'neptun': 'aaaaaa',
-			'password': hashlib.sha256('passwd'.encode()).hexdigest()
+		seeder.add_entity(User, 20, {
+			'is_staff': False,
+			'is_superuser': False,
 		})
 		#
 		seeder.add_entity(Courses, 10, {
+			'owner': lambda x: seeder.faker.random_element(User.objects.all()),
 			'code': lambda x: 'EA' + ''.join(random.choices('0123456789', k=7))
 		})
 		#
-		seeder.add_entity(UsersCourses, 10)
+		seeder.add_entity(UsersCourses, 10, {
+			'user': lambda x: seeder.faker.random_element(User.objects.all()),
+			'course': lambda x: seeder.faker.random_element(Courses.objects.all())
+		})
 		#
 		seeder.add_entity(Lessons, 10)
 		#
