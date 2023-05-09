@@ -56,14 +56,6 @@ Ehhez tulajdonképpen internet kapcsolat szükséges és mivel manapság egyre t
 | F15 | Kurzus szerkesztő | Kurzus szerkesztő | kurzus feltöltésére szolgáló lap |
 | F15 | Kurzus szerkesztő | Kurzus feltöltő | kurzus feltoltésére szolgáló kód |
 
-### 4.2 Nemfunkcionális követelmények
-
-| ID | Megnevezés | Leírás |
-| --- | --- | --- |
-| K1 | UI | Az elvárás a felület modern kialakítása és könnyű navigálhatósága a mai kor igényeinek megfelelően |
-| K2 | Tulajdon kezelés | Kurzus tulajdonos megkülönböztetése |
-| K3 | Felhasználó kezelés | Felhasználói fiók létrehozása, adatok tárolása |
-
 ### 4.3 Támogatott eszközök
 A támogatott eszközök magukba foglalják a modern webböngészőket, mint például a Google Chrome, Firefox és Safari, valamint azokat az eszközöket, amelyek rendelkeznek beépített webböngészővel és interneteléréssel.
 
