@@ -7,6 +7,9 @@ from . import forms
 def temp_logout(request):
     return render(request, 'temp_logout.html')
 
+def temp_logout(request):
+    return render(request, 'temp_logout.html')
+
 def index(request):
     return home(request)
 
