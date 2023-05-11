@@ -34,9 +34,6 @@ def register(request):
 									last_name=last_name,
 									password=password
 								)
-		whathaveidone = Models.Usere(username=neptun,
-									password=password
-								)
 		user.save()
 		messages.success(request, 'Registration success.')
 
