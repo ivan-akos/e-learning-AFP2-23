@@ -2,4 +2,16 @@
 
 {% block content %}
  <p>{{Course.name}}</p>
+ <hr>
+ <div>
+  <h4>Lessons:</h4>
+   {% for lesson in Course.lessons_set.all %}
+    <p>
+     <b>{{ lesson.name }}</b><br>
+     <span>{{ lesson.body }}</span>
+	</p>
+   {% endfor %}
+ <div>
+ <hr>
+ {% include 'components/create_lesson.html' %}
 {% endblock content %}

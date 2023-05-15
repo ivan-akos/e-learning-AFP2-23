@@ -20,9 +20,11 @@ def courses(request):
     context = {"courses_list":courses_list}
     return render(request, 'courses.html',context)
 
-def course(request,course_id):
-    course = get_object_or_404(Courses,pk=course_id)
-    return render(request, 'course.html',{"Course":course})
+def course(request, course_id):
+    course = get_object_or_404(Courses, pk=course_id)
+    if request.method == 'POST':
+        forms.create_lesson(request, course)
+    return render(request, 'course.html', {"Course":course})
 
 
 
