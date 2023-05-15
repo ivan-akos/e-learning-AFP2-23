@@ -4,6 +4,7 @@ import django.contrib.auth as auth
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from django.contrib import messages
+from django.db.models import Max
 from django.db import IntegrityError
 import hashlib
 import random
@@ -53,13 +54,32 @@ def login(request):
 @csrf_exempt
 def create_course(request):
 	if request.method == 'POST':
+		course = Models.Courses(
+				code = ''.join(random.choice(string.ascii_lowercase + string.digits) for i in range(11)),
+				name = request.POST.get('name'),
+				owner = request.user
+			)
+		course.save()
 		try:
-			course = Models.Courses(
-					code = Models.Courses.generate_code(),
-					name = request.POST.get('name'),
-					owner = request.user
-				)
-			course.save()
+#			course = Models.Courses(
+#					code = ''.join(random.choice(string.ascii_lowercase + string.digits) for i in range(11)),
+#					name = request.POST.get('name'),
+#					owner = request.user.id
+#				)
 			messages.success(request, 'Új kurzus létre hozva.')
+		except:
+			messages.error(request, 'Valami félrement.')
+			
+@csrf_exempt
+def create_lesson(request, course):
+		course = Models.Lessons(
+					course = course,
+					name = request.POST.get('name'),
+					nth = (course.lessons_set.aggregate(Max('nth'))['nth__max'] or 0)+1,
+					body = request.POST.get('body')
+				)
+		course.save()
+		try:
+			messages.success(request, 'Új óra létre hozva.')
 		except:
 			messages.error(request, 'Valami félrement.')
