@@ -4,7 +4,6 @@ from django.contrib import messages
 from .models import Courses
 from . import forms
 
-
 def temp_logout(request):
     return render(request, 'temp_logout.html')
 
@@ -40,3 +39,6 @@ def about(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def login_wall(request):
+    return render(request, 'login_wall.html')
