@@ -11,6 +11,8 @@ def index(request):
     return home(request)
 
 def home(request):
+    messages._queued_messages = []
+    forms.login(request)
     return render(request, 'home.html')
 
 def courses(request):
