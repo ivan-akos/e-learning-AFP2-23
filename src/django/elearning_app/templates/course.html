@@ -17,7 +17,7 @@
  <p>{{Course.name}}</p>
  <form method="post">
   {% csrf_token %}
-  <input style="display: none" name="delete" value="True"></input>
+  <input style="display: none" name="delete" value="course"></input>
   <button type=submit>Delete</button>
  </form>
  <hr>
@@ -27,6 +27,12 @@
     <p>
      <b>{{ lesson.name }}</b><br>
      <span>{{ lesson.body }}</span>
+     <form method="post">
+      {% csrf_token %}
+      <input style="display: none" name="delete" value="lesson"></input>
+      <input style="display: none" name="to_delete" value="{{ lesson.id }}"></input>
+      <button type=submit>Delete</button>
+     </form>
 	</p>
    {% endfor %}
  <div>
