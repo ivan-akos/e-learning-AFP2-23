@@ -40,5 +40,11 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def create_course(request):
+    if not request.user.is_authenticated:
+        return render(request, 'login_wall.html')
+    forms.create_course(request)
+    return render(request, 'create_course.html')
+
 def login_wall(request):
     return render(request, 'login_wall.html')
