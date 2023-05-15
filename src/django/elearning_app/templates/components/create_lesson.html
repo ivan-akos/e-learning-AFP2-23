@@ -1,16 +1,3 @@
- 	{% if messages %}
-		{% for message in messages %}
-			{% if message.tags == 'success' %}
-				<div class="alert alert-success" role="alert" style="color: green">
-					{{ message }}
-				</div>
-			{% elif message.tags == 'error' %}
-				<div class="alert alert-danger" role="alert" style="color: red">
-					{{ message }}
-				</div>
-			{% endif %}
-		{% endfor %}
-	{% endif %}
 	<div>
 		<h5>Create lesson:</h5>
 		<form method="post">
