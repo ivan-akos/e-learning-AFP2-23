@@ -86,3 +86,17 @@ def create_lesson(request, course):
 			messages.success(request, 'Új óra létre hozva.')
 		except:
 			messages.error(request, 'Valami félrement.')
+
+def process_course_form(request, course):
+    switch = request.POST.get('delete')
+    if switch == None:
+        forms.create_lesson(request, course)
+    elif switch == 'course':
+        course.delete()
+        return redirect('courses')
+    elif switch == 'lesson':
+        lesson = Models.Lessons.objects.get(pk=request.POST.get('to_delete'))
+        lesson.delete()
+        messages.success(request, 'Óra törölve.')
+    else:
+        pass
