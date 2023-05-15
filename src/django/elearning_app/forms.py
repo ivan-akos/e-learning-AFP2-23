@@ -6,6 +6,9 @@ from django.contrib.auth.hashers import make_password
 from django.contrib import messages
 from django.db import IntegrityError
 import hashlib
+import random
+import string
+import elearning_app.models as Models
 import pdb
 
 @csrf_exempt
@@ -47,3 +50,16 @@ def login(request):
 		else:
 			messages.error(request, 'Sikertelen bejelentkezés.')
 			
+@csrf_exempt
+def create_course(request):
+	if request.method == 'POST':
+		try:
+			course = Models.Courses(
+					code = Models.Courses.generate_code(),
+					name = request.POST.get('name'),
+					owner = request.user
+				)
+			course.save()
+			messages.success(request, 'Új kurzus létre hozva.')
+		except:
+			messages.error(request, 'Valami félrement.')
