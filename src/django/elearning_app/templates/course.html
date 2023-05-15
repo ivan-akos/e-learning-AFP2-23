@@ -1,7 +1,25 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+ 	{% if messages %}
+		{% for message in messages %}
+			{% if message.tags == 'success' %}
+				<div class="alert alert-success" role="alert" style="color: green">
+					{{ message }}
+				</div>
+			{% elif message.tags == 'error' %}
+				<div class="alert alert-danger" role="alert" style="color: red">
+					{{ message }}
+				</div>
+			{% endif %}
+		{% endfor %}
+	{% endif %}
  <p>{{Course.name}}</p>
+ <form method="post">
+  {% csrf_token %}
+  <input style="display: none" name="delete" value="True"></input>
+  <button type=submit>Delete</button>
+ </form>
  <hr>
  <div>
   <h4>Lessons:</h4>
