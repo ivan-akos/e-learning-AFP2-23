@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render,get_object_or_404
 from django.contrib import messages
+from django.shortcuts import redirect
 from .models import Courses
 from . import forms
 
@@ -23,7 +24,11 @@ def courses(request):
 def course(request, course_id):
     course = get_object_or_404(Courses, pk=course_id)
     if request.method == 'POST':
-        forms.create_lesson(request, course)
+        if request.POST.get('delete') != None:
+            course.delete()
+            return redirect('courses')
+        else:
+            forms.create_lesson(request, course)
     return render(request, 'course.html', {"Course":course})
 
 
