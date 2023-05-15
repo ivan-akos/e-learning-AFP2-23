@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render,get_object_or_404
 from django.contrib import messages
 from django.shortcuts import redirect
-from .models import Courses
+from .models import *
 from . import forms
 
 def temp_logout(request):
@@ -27,11 +27,18 @@ def courses(request):
 def course(request, course_id):
     course = get_object_or_404(Courses, pk=course_id)
     if request.method == 'POST':
-        if request.POST.get('delete') != None:
+        switch = request.POST.get('delete')
+        if switch == None:
+            forms.create_lesson(request, course)
+        elif switch == 'course':
             course.delete()
             return redirect('courses')
+        elif switch == 'lesson':
+            lesson = Lessons.objects.get(pk=request.POST.get('to_delete'))
+            lesson.delete()
+            messages.success(request, 'Óra törölve.')
         else:
-            forms.create_lesson(request, course)
+            pass
     return render(request, 'course.html', {"Course":course})
 
 
