@@ -14,19 +14,34 @@
 			{% endif %}
 		{% endfor %}
 	{% endif %}
-    <form method="post">
-	  {% csrf_token %}
-      <label for="neptun">Neptun:</label><br>
-      <input type="text" id="neptun" name="neptun" required><br>
-      <label for="first_name">First Name:</label><br>
-      <input type="text" id="first_name" name="first_name" required><br>
-      <label for="last_name">Last Name:</label><br>
-      <input type="text" id="last_name" name="last_name" required><br>
-      <label for="email">Email:</label><br>
-      <input type="text" id="email" name="email" required><br>
-      <label for="password">Password:</label><br>
-      <input type="password" id="password" name="password" required><br>
-      <br>
-      <input type="submit" value="Register">
-    </form>
+        <form method="post">
+	      {% csrf_token %}
+        <div class="col-md-8" style="padding: 0px; margin-left: auto; margin-right: auto;">
+          <div class="d-flex flex-column align-items-center" style="margin-top: 20px;">
+            <div class="mb-3">
+              <input class="form-control" type="text" name="neptun" id="neptun" placeholder="Neptun code" required>
+            </div>
+            <div class="mb-3">
+              <input class="form-control" type="text" name="first_name" id="first_name" placeholder="First name" required>
+            </div>
+            <div class="mb-3">
+              <input class="form-control" type="text" name="last_name" id="last_name" placeholder="Last name" required>
+            </div>
+            <div class="mb-3">
+              <input class="form-control" type="text" name="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="mb-3">
+              <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="mb-3">
+              <button class="btn btn-secondary d-block w-100" style="background-color: var(--custom-secondary-color);" type="submit" value="Register">
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}
