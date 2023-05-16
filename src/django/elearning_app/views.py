@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render,get_object_or_404
 from django.contrib import messages
+import django.contrib.auth as auth
+from django.contrib.auth.models import User
 from .models import Courses
 from . import forms
 
@@ -24,8 +26,6 @@ def course(request,course_id):
     course = get_object_or_404(Courses,pk=course_id)
     return render(request, 'course.html',{"Course":course})
 
-
-
 def signup(request):
     messages._queued_messages = []
     forms.register(request)
@@ -34,7 +34,11 @@ def signup(request):
 def login(request):
     messages._queued_messages = []
     forms.login(request)
-    return render(request, 'login.html') 
+    return render(request, 'home.html') 
+
+def logout(request):
+    auth.logout(request)
+    return home(request)
 
 def about(request):
     return render(request, 'about.html')
