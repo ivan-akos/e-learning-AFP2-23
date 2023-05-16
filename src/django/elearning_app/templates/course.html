@@ -17,6 +17,13 @@
  <p>{{Course.name}}</p>
  <form method="post">
   {% csrf_token %}
+  <input style="display: none" name="operation" value="update"></input>
+  <input style="display: none" name="model" value="course"></input>
+  <input name="name" value="{{ course.name }}"></input>
+  <button type=submit>Update</button>
+ </form>
+ <form method="post">
+  {% csrf_token %}
   <input style="display: none" name="operation" value="delete"></input>
   <input style="display: none" name="model" value="course"></input>
   <button type=submit>Delete</button>
