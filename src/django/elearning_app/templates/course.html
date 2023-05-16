@@ -17,7 +17,15 @@
  <p>{{Course.name}}</p>
  <form method="post">
   {% csrf_token %}
-  <input style="display: none" name="delete" value="course"></input>
+  <input style="display: none" name="operation" value="update"></input>
+  <input style="display: none" name="model" value="course"></input>
+  <input name="name" value="{{ course.name }}"></input>
+  <button type=submit>Update</button>
+ </form>
+ <form method="post">
+  {% csrf_token %}
+  <input style="display: none" name="operation" value="delete"></input>
+  <input style="display: none" name="model" value="course"></input>
   <button type=submit>Delete</button>
  </form>
  <hr>
@@ -27,9 +35,20 @@
     <p>
      <b>{{ lesson.name }}</b><br>
      <span>{{ lesson.body }}</span>
+     <form method="post" style="border: solid black 1px; width: fit-content;">
+      {% csrf_token %}
+      <input style="display: none" name="operation" value="update"></input>
+      <input style="display: none" name="model" value="lesson"></input>
+      <input style="display: none" name="to_update" value="{{ lesson.id }}"></input>
+      <input name="name" value="{{ lesson.name }}"></input><br>
+      <textarea name="body">{{ lesson.body }}</textarea><br>
+      <button type=submit>Update</button>
+     </form>
+	</p>
      <form method="post">
       {% csrf_token %}
-      <input style="display: none" name="delete" value="lesson"></input>
+      <input style="display: none" name="operation" value="delete"></input>
+      <input style="display: none" name="model" value="lesson"></input>
       <input style="display: none" name="to_delete" value="{{ lesson.id }}"></input>
       <button type=submit>Delete</button>
      </form>
