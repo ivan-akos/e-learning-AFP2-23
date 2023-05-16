@@ -105,9 +105,11 @@ def process_course_form(request, course):
     if operation == 'update':
         model = request.POST.get('model')
         if model == 'course':
-            pass
+            course.name = request.POST.get('name')
+            course.save()
         elif model == 'lesson':
             lesson = Models.Lessons.objects.get(pk=request.POST.get('to_update'))
             lesson.name = request.POST.get('name')
             lesson.body = request.POST.get('body')
             lesson.save()
+        return
