@@ -14,32 +14,30 @@ import pdb
 
 @csrf_exempt
 def register(request):
-    if request.method == 'POST':
-        neptun = request.POST['neptun']
-        email = request.POST['email']
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
-        password = make_password(request.POST['password'])
-        try:
-            # Check field lengths
-            if len(neptun) != 6:
-                raise AssertionError('Neptun must be 6 characters long')
-            # Create user
-        except (AssertionError, IntegrityError) as e:
-            messages.error(request, 'Registration error.')
-            return
-        #
-        user = User.objects.create(username=neptun,
-                                    email=email,
-                                    first_name=first_name,
-                                    last_name=last_name,
-                                    password=password
-                                )
-        whathaveidone = Models.Usere(username=neptun,
-                                    password=password
-                                )
-        user.save()
-        messages.success(request, 'Registration success.')
+	if request.method == 'POST':
+		neptun = request.POST['neptun']
+		email = request.POST['email']
+		first_name = request.POST['first_name']
+		last_name = request.POST['last_name']
+		password = make_password(request.POST['password'])
+		try:
+			# Check field lengths
+			if len(neptun) != 6:
+				raise AssertionError('Neptun must be 6 characters long')
+			# Create user
+		except (AssertionError, IntegrityError) as e:
+			messages.error(request, 'Registration error.')
+			return
+		#
+		user = User.objects.create(username=neptun,
+									email=email,
+									first_name=first_name,
+									last_name=last_name,
+									password=password
+								)
+		
+		user.save()
+		messages.success(request, 'Registration success.')
 
 
 @csrf_exempt
