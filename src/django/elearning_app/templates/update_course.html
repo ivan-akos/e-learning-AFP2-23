@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="row" style="background-color: var(--custom-secondary-color); margin-top: 20px; flex:1;">
+    <div class="text-white" style="margin-top: 20px; margin-bottom:20px; text-align: center;">
+        <h1>Update: <b>{{Course.name}}</b></h1>
+        <p></p>
+    </div>
+</div>
+<div class="container" style=" padding: 20px">
+  <div class="row">
+      <div class="col-md-8" style="padding: 0px; margin-left: auto; margin-right: auto;">
+        <h1>{{ Course.name }}</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input style="display: none" name="operation" value="update"></input>
+            <input style="display: none" name="model" value="course"></input>
+            <input name="name" value="{{ course.name }}"></input>
+            <button type=submit>Update</button>
+        </form>
+        <form method="post">
+            {% csrf_token %}
+            <input style="display: none" name="operation" value="delete"></input>
+            <input style="display: none" name="model" value="course"></input>
+            <button type=submit>Delete</button>
+        </form>
+        <hr>
+        <div>
+            <h4>Lessons:</h4>
+            {% for lesson in Course.lessons_set.all %}
+            <p>
+            <b>{{ lesson.name }}</b><br>
+            <span>{{ lesson.body }}</span>
+            <form method="post" style="border: solid black 1px; width: fit-content;">
+                {% csrf_token %}
+                <input style="display: none" name="operation" value="update"></input>
+                <input style="display: none" name="model" value="lesson"></input>
+                <input style="display: none" name="to_update" value="{{ lesson.id }}"></input>
+                <input name="name" value="{{ lesson.name }}"></input><br>
+                <textarea name="body">{{ lesson.body }}</textarea><br>
+                <button type=submit>Update</button>
+            </form>
+            </p>
+            <form method="post">
+                {% csrf_token %}
+                <input style="display: none" name="operation" value="delete"></input>
+                <input style="display: none" name="model" value="lesson"></input>
+                <input style="display: none" name="to_delete" value="{{ lesson.id }}"></input>
+                <button type=submit>Delete</button>
+            </form>
+            </p>
+            {% endfor %}
+        <div>
+        <hr>
+        {% include 'components/create_lesson.html' %} 
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -14,6 +14,7 @@
 			{% endif %}
 		{% endfor %}
 	{% endif %}
+{% comment %} 
  <p>{{Course.name}}</p>
  <form method="post">
   {% csrf_token %}
@@ -56,5 +57,45 @@
    {% endfor %}
  <div>
  <hr>
- {% include 'components/create_lesson.html' %}
+ {% include 'components/create_lesson.html' %} 
+ {% endcomment %}
+ <div class="row" style="background-color: var(--custom-secondary-color); margin-top: 20px; flex:1;">
+     <div class="text-white" style="margin-top: 20px; margin-bottom:20px; text-align: center;">
+         <h1>Course: <b>{{Course.name}}</b></h1>
+         <p></p>
+     </div>
+ </div>
+
+ <div class="container" style=" padding: 20px">
+     <div class="row">
+         <div class="col-md-8" style="padding: 0px; margin-left: auto; margin-right: auto;">
+               <p>This is the default course description, it is work in progress, and will hopefully change soon. <br>
+                  Here's some lipsum until then :) <br>
+                  Donec placerat mi vel tortor ultrices euismod. Aliquam erat volutpat. Cras dapibus cursus nulla ut dictum. Donec congue eros eu eros ultricies egestas. Ut erat turpis, pulvinar a blandit sit amet, finibus a enim. Morbi lobortis malesuada tortor, a feugiat nunc aliquam in. Maecenas non pellentesque libero, in gravida orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi tincidunt nec nisi non blandit. Donec cursus sapien id felis pharetra congue. 
+               </p>
+               
+               <a class="btn btn-primary" href="{% url 'update_course' course_id=Course.id %}">Update</a>
+
+               <div>
+                    <h4>Lessons:</h4>
+                    {% for lesson in Course.lessons_set.all %}
+                    <div class="accordion" id="lessonsAccordion">
+                         <div class="accordion-item">
+                              <h2 class="accordion-header" id="header{{lesson.id}}">
+                                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{lesson.id}}">
+                                        <b>{{ lesson.name }}</b><br>
+                                   </button>
+                              </h2>
+                              <div id="collapse{{lesson.id}}" class="accordion-collapse collapse" data-bs-parent="#lessonsAccordion">
+                                   <div class="accordion-body">
+                                        <span>{{ lesson.body }}</span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    {%endfor%}
+               </div>
+         </div>
+     </div>
+</div>
 {% endblock content %}
