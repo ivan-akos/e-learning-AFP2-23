@@ -12,10 +12,40 @@
     {% bootstrap_javascript %}
 </head>
 
-<body style="overflow-x: hidden; min-height: 100vh; margin:0; display:flex; flex-direction:column;">
+<body style="overflow-x: hidden; ">
     <div class="row">
         <div class="col">
             <section class="position-relative">
+                <div style="position: relative; min-height: 100vh;">
+                    <div style="padding-bottom: 20rem;">
+                        <nav class="navbar navbar-dark navbar-expand-md py-3 sticky-top" style="background-color: var(--custom-main-color)">
+                            <div class="container">
+                                <a class="navbar-brand d-flex align-items-center" href="/home">
+                                    <span>XYZ <b>E-Learning</b></span>
+                                </a>
+                                <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5">
+                                    <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navcol-5">
+                                    <ul class="navbar-nav ms-auto">
+                                        <li class="nav-item"><a class="nav-link active" href="/courses">Courses</a></li>
+                                        {% if user.is_authenticated%}
+                                            <li class="nav-item"><a class="nav-link active" href="{% url 'profile' user_id=user.id %}">Profile</a></li>
+                                        {% endif %}
+                                        
+                                        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                                    </ul>
+                                    {% if user.is_authenticated%}
+                                    <a class="btn btn-secondary ms-md-2" style="background-color: var(--custom-secondary-color)" type="button" href="/logout">Logout</a>
+                                    {% else %}
+                                    <a class="btn btn-light ms-md-2" style="color: var(--custom-secondary-color)" role="button" href="/signup">Sign Up!</a>
+                                    <a class="btn btn-secondary ms-md-2" style="background-color: var(--custom-secondary-color)" type="button" href="/home">Login</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </nav>
+
                         {%block content%}
 
                         {%endblock content%}
@@ -63,6 +93,8 @@
                                 </div>
                             </div>
                         </footer>
+                    </div>
+                </div>
             </section>
         </div>
     </div>
