@@ -13,3 +13,7 @@ src/django/elearning/__pycache__/settings.cpython-311.pyc
 src/django/elearning/__pycache__/urls.cpython-311.pyc
 src/django/elearning/__pycache__/wsgi.cpython-311.pyc
 **/__pycache__/
+src/django/elearning_app/migrations/0001_initial.py
+src/django/elearning_app/migrations/0002_alter_lessons_id_alter_media_id_and_more.py
+src/django/elearning_app/migrations/0003_alter_media_data.py
+src/django/elearning_app/migrations/0004_alter_courses_owner_alter_lessons_course_and_more.py
