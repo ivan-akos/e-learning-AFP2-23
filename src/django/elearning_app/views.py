@@ -37,9 +37,13 @@ def profile(request, user_id):
 
 def course(request, course_id):
     course = get_object_or_404(Courses, pk=course_id)
+    return render(request, 'course.html', {"Course":course})
+
+def update_course(request, course_id):
+    course = get_object_or_404(Courses, pk=course_id)
     if request.method == 'POST':
         forms.process_course_form(request, course)
-    return render(request, 'course.html', {"Course":course})
+    return render(request, 'update_course.html', {"Course":course})
 
 def signup(request):
     messages._queued_messages = []
