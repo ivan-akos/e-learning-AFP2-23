@@ -1,0 +1,14 @@
+<div>
+    <form method="post">
+	  {% csrf_token %}
+      <div class="row">
+        <div class="col">
+          <input class="form-control" type="text" id="name" placeholder="Course name" name="name" required>
+        </div>
+        <div class="col">
+          <input class="btn btn-secondary" type="submit" value="Create"></input>
+        </div>
+      </div>
+    </form>
+</div>
+
