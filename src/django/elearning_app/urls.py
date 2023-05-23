@@ -9,6 +9,7 @@ urlpatterns = [
     re_path(r'^courses/?$', views.courses, name='courses'),
     re_path(r'^signup/?$', views.signup, name='signup'),
     re_path(r'^login/?$', views.login, name='login'),
+    path("profile/<int:user_id>/", views.profile, name="profile"),
     re_path(r'^logout/?$', LogoutView.as_view(), name='logout'),
     re_path(r'^about/?$', views.about, name='about'),
     re_path(r'^contact/?$', views.contact, name='contact'),
