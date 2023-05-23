@@ -2,6 +2,9 @@
 {% load static %}
     <link rel="stylesheet" href="{% static 'custom.css' %}">
 {% block content %}
+
+
+
 <div class="container" style=" padding: 20px">
     <div class="row">
         <div class="col-md-8" style="padding: 0px">
@@ -22,6 +25,8 @@
                 </div>
             </div>
         </div>
+        {% if user.is_authenticated%}
+        {% else %}  
         <div class="col-md-4" style="padding: 0px">
             <div class="card mb-5" style="height: 350px;
                                           margin: 50px 50px 50px 0px;">
@@ -60,7 +65,10 @@
             </div>
 </div>
         </div>
+        {% endif %}
     </div>
+    {% if user.is_authenticated%}
+    {% else %}  
     <div class="container">
         <div class="text-white border rounded border-0 d-flex flex-column justify-content-between flex-lg-row p-4 p-md-5"
              style="background-color: var(--custom-secondary-color);">
@@ -74,6 +82,9 @@
                                  href="/signup">Sign Up!</a></div>
         </div>
     </div>
+    {% endif %}
 </div>
+
+
 
 {% endblock content %}
