@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="row" style="background-color: var(--custom-secondary-color); margin-top: 20px; flex:1;">
+    <div class="text-white" style="margin-top: 20px; margin-bottom:20px; text-align: center;">
+        <h1>Profile</h1>
+        <p></p>
+    </div>
+</div>
+
+<div class="container" style=" padding: 20px">
+    <div class="row">
+        <div class="col-md-8" style="padding: 0px; margin-left: auto; margin-right: auto;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body"><i class="material-icons" style="font-size: 131px;"></i>
+                            <h4 class="card-title">{{user.first_name}} {{user.last_name}}</h4>
+                            <h6 class="text-muted card-subtitle mb-2">{{user.username}}</h6>
+                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% comment %} <div class="col-md-6">
+                    <ul>
+                        {% for users_course in users_courses %}
+                            <li><a href="{% url 'course' users_course.course %}">{{users_course.id}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div> {% endcomment %}
+                <div class="col-md-6">
+                    <ul>
+                        {% for owned_course in owned_courses %}
+                            <li><a href="{% url 'course' owned_course.id %}">{{owned_course.name}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
