@@ -59,36 +59,37 @@ def create_course(request):
                 name = request.POST.get('name'),
                 owner = request.user
             )
-        course.save()
+        
         try:
+            course.save()
 #            course = Models.Courses(
 #                    code = ''.join(random.choice(string.ascii_lowercase + string.digits) for i in range(11)),
 #                    name = request.POST.get('name'),
 #                    owner = request.user.id
 #                )
-            messages.success(request, 'Új kurzus létre hozva.')
+            messages.success(request, 'New course created')
         except:
-            messages.error(request, 'Valami félrement.')
+            messages.error(request, 'Something is wrong')
             
 @csrf_exempt
 def create_lesson(request, course):
-        course = Models.Lessons(
+        lesson = Models.Lessons(
                     course = course,
                     name = request.POST.get('name'),
                     nth = (course.lessons_set.aggregate(Max('nth'))['nth__max'] or 0)+1,
                     body = request.POST.get('body')
                 )
-        course.save()
         try:
-            messages.success(request, 'Új óra létre hozva.')
+            lesson.save()
+            messages.success(request, 'New lesson created')
         except:
-            messages.error(request, 'Valami félrement.')
+            messages.error(request, 'Something is wrong')
 
 def process_course_form(request, course):
     operation = request.POST.get('operation')
-    if operation == 'create':
-        forms.create_lesson(request, course)
-        return
+    """ if operation == 'create':
+        create_lesson(request, course)
+        return """
     if operation == 'delete':
         model = request.POST.get('model')
         if model == 'course':
