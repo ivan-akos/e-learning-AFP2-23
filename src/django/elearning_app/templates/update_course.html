@@ -18,17 +18,17 @@
             <div class="mb-3">
                 <input class="form-control" type="text" name="Name" id="name" placeholder="Name" required>
               </div>
-                <a class="btn btn-secondary" style="background-color: var(--custom-secondary-color);" type="submit" value="Update">
+                <button class="btn btn-secondary" style="background-color: var(--custom-secondary-color);" type="submit" value="Update">
                     Update
-                </a>
+                </button>
         </form>
         <form method="post">
             {% csrf_token %}
             <input style="display: none" name="operation" value="delete"></input>
             <input style="display: none" name="model" value="course"></input>
-            <a class="btn btn-secondary" style="background-color: var(--custom-secondary-color);" type="submit" value="Delete">
+            <button class="btn btn-secondary" style="background-color: var(--custom-secondary-color);" type="submit" value="Delete">
                 Delete
-            </a>
+            </button>
         </form>
         <hr>
         <div>
@@ -44,9 +44,9 @@
                 <input style="display: none" name="to_update" value="{{ lesson.id }}"></input>
                 <input name="name" value="{{ lesson.name }}"></input><br>
                 <textarea name="body">{{ lesson.body }}</textarea><br>
-                <a class="btn btn-secondary" style="background-color: var(--custom-secondary-color);" type="submit" value="Update">
+                <button class="btn btn-secondary" style="background-color: var(--custom-secondary-color);" type="submit" value="Update">
                     Update
-                </a>
+                </button>
             </form>
             </p>
             <form method="post">
@@ -54,15 +54,14 @@
                 <input style="display: none" name="operation" value="delete"></input>
                 <input style="display: none" name="model" value="lesson"></input>
                 <input style="display: none" name="to_delete" value="{{ lesson.id }}"></input>
-                <a class="btn btn-secondary" style="background-color: var(--custom-secondary-color);" type="submit" value="Delete">
+                <button class="btn btn-secondary" style="background-color: var(--custom-secondary-color);" type="submit" value="Delete">
                     Delete
-                </a>
+                </button>
             </form>
             </p>
             {% endfor %}
         <div>
         <hr>
-        {% include 'components/create_lesson.html' %} 
        </div>
       </div>
      </div>
