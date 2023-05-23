@@ -73,9 +73,9 @@
                   Here's some lipsum until then :) <br>
                   Donec placerat mi vel tortor ultrices euismod. Aliquam erat volutpat. Cras dapibus cursus nulla ut dictum. Donec congue eros eu eros ultricies egestas. Ut erat turpis, pulvinar a blandit sit amet, finibus a enim. Morbi lobortis malesuada tortor, a feugiat nunc aliquam in. Maecenas non pellentesque libero, in gravida orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi tincidunt nec nisi non blandit. Donec cursus sapien id felis pharetra congue. 
                </p>
-               
+               {% if user.is_staff == 1 %}
                <a class="btn btn-primary" href="{% url 'update_course' course_id=Course.id %}">Update</a>
-
+               {% endif %}
                <div>
                     <h4>Lessons:</h4>
                     {% for lesson in Course.lessons_set.all %}
