@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import redirect
 from .models import *
 from . import forms
+from django.contrib import auth
 
 def temp_logout(request):
     return render(request, 'temp_logout.html')
