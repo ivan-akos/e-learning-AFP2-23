@@ -4,6 +4,7 @@ from django.contrib import messages
 import django.contrib.auth as auth
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
+from django.contrib import auth
 from .models import *
 from . import forms
 from django.contrib import auth
