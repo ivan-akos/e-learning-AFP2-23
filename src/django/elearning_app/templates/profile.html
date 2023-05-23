@@ -23,13 +23,13 @@
                 </div>
             </div>
             <div class="row">
-                {% comment %} <div class="col-md-6">
+                 <div class="col-md-6">
                     <ul>
                         {% for users_course in users_courses %}
-                            <li><a href="{% url 'course' users_course.course %}">{{users_course.id}}</a></li>
+                            <li><a href="{% url 'course' users_course.course.id%}">{{users_course.course.name}}</a></li>
                         {% endfor %}
                     </ul>
-                </div> {% endcomment %}
+                </div>
                 <div class="col-md-6">
                     <ul>
                         {% for owned_course in owned_courses %}
