@@ -1,10 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render,get_object_or_404
 from django.contrib import messages
-import django.contrib.auth as auth
-from django.contrib.auth.models import User
-from .models import Courses
-from .models import UsersCourses
+from django.shortcuts import redirect
+from .models import *
 from . import forms
 
 def temp_logout(request):
@@ -30,8 +28,10 @@ def profile(request, user_id):
                                             "owned_courses":owned_courses,
                                             "users_courses":users_courses})
 
-def course(request,course_id):
-    course = get_object_or_404(Courses,pk=course_id)
+def course(request, course_id):
+    course = get_object_or_404(Courses, pk=course_id)
+    if request.method == 'POST':
+        forms.process_course_form(request, course)
     return render(request, 'course.html', {"Course":course})
 
 def signup(request):

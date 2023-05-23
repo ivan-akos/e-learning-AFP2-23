@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+import random
 User = get_user_model()
 
 class Courses(models.Model):
@@ -10,6 +11,11 @@ class Courses(models.Model):
     class Meta:
         managed = True
         db_table = 'courses'
+
+    def generate_code():
+        r = 'EA' + ''.join(random.choices('0123456789', k=7))
+        print(r)
+        return r
 
 
 class UsersCourses(models.Model):

@@ -113,5 +113,15 @@ Sikeresség hitelesítése:
 	+ Elérhetővé kell vállnia a test szervernek "http://127.0.0.1:8000"-n 
 	+ Az admin felületnek ("http://127.0.0.1:8000/admin") be kell engednie "admin"; "admin" adatok megadásával
 
-## 11. Karbantartási terv
+## 11. Tesztterv
+A rendszerterv szerint implementált szoftver tesztelésének célja, hogy ellenőrizze az üzleti folyamatok modellje című pontban meghatározott helyes, specifikáció szerinti lefutását, valamint hogy a kliens webes felület felhasználóbarát módon és reszponzívan jelenik meg valamennyi eszközön, és használható különböző hardver és szoftverkörnyezetben.
+
+A tesztelés során használt kiszolgáló hardver koonfigurációja a telepítés során használt hardverrel kompatibilis, teljesítményben (processzor, operatív memória, háttértár) nem tér el jelentősen. Telepítéskor igény szerint biztosítunk ehhez szükséges hardvert is.
+
+A tesztelés során a használt hardverek a napjainkban elterjedt hardverkonfigurációjú PC-k illetve laptopok, melyeken a leggyakrabban használt böngészőkön (Google Chrome, Mozzila Firefox, Microsoft Edge) teszteljük a rendszert az alábbiakban részletezettek szerint.
+
+A weboldal megtekintéséhez:
+Egy böngészőt futtatni képes PC, mobiltelefon, vagy tablet. A tesztelés során az üzleti folyamatokhoz tartozó különböző forgatókönyvek eredményét vizsgáljuk. Amennyiben az elvártnak megfelelő eredményt kapjuk, a teszteset sikeresnek tekinthető, ellentkező esetben a hibát rögzítjük a tesztjegyzőkönyvben. Ezt követően a feljegyzett hibákat javítjuk a szoftverben, és újbóli tesztelésnek vetjük alá a rendszert.
+
+## 12. Karbantartási terv
 
