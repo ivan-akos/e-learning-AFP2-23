@@ -42,6 +42,7 @@ def profile(request, user_id):
 
 def course(request, course_id):
     course = get_object_or_404(Courses, pk=course_id)
+    forms.create_lesson(request, course)
     return render(request, 'course.html', {"Course":course})
 
 def update_course(request, course_id):
