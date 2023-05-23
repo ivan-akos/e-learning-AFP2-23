@@ -23,8 +23,15 @@ def home(request):
 
 def courses(request):
     courses_list = Courses.objects.order_by("id")
-    context = {"courses_list":courses_list}
-    return render(request, 'courses.html',context)
+    return render(request, 'courses.html', {"courses_list":courses_list})
+
+def profile(request, user_id):
+    user = User.objects.get(pk=int(user_id))
+    owned_courses = Courses.objects.filter(owner=int(user_id))
+    users_courses = UsersCourses.objects.filter(user=int(user_id))
+    return render(request, 'profile.html', {"user":user,
+                                            "owned_courses":owned_courses,
+                                            "users_courses":users_courses})
 
 def course(request, course_id):
     course = get_object_or_404(Courses, pk=course_id)
