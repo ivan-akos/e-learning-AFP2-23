@@ -23,6 +23,9 @@ def home(request):
     return render(request, 'home.html', {"users_courses":users_courses})
 
 def courses(request):
+    if not request.user.is_authenticated:
+        return render(request, 'login_wall.html')
+    forms.create_course(request)
     courses_list = Courses.objects.order_by("id")
     return render(request, 'courses.html', {"courses_list":courses_list})
 
