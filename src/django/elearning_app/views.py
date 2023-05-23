@@ -14,9 +14,13 @@ def index(request):
     return home(request)
 
 def home(request):
-    messages._queued_messages = []
     forms.login(request)
-    return render(request, 'home.html')
+    if request.user.is_authenticated:
+        users_courses = UsersCourses.objects.filter(user_id=int(request.user.id))
+    else:
+        users_courses = []
+    
+    return render(request, 'home.html', {"users_courses":users_courses})
 
 def courses(request):
     courses_list = Courses.objects.order_by("id")
