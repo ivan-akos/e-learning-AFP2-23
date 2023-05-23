@@ -44,7 +44,9 @@
                 <input style="display: none" name="to_update" value="{{ lesson.id }}"></input>
                 <input name="name" value="{{ lesson.name }}"></input><br>
                 <textarea name="body">{{ lesson.body }}</textarea><br>
-                <button type=submit>Update</button>
+                <a class="btn btn-secondary" style="background-color: var(--custom-secondary-color);" type="submit" value="Update">
+                    Update
+                </a>
             </form>
             </p>
             <form method="post">
@@ -52,7 +54,9 @@
                 <input style="display: none" name="operation" value="delete"></input>
                 <input style="display: none" name="model" value="lesson"></input>
                 <input style="display: none" name="to_delete" value="{{ lesson.id }}"></input>
-                <button type=submit>Delete</button>
+                <a class="btn btn-secondary" style="background-color: var(--custom-secondary-color);" type="submit" value="Delete">
+                    Delete
+                </a>
             </form>
             </p>
             {% endfor %}
@@ -60,6 +64,8 @@
         <hr>
         {% include 'components/create_lesson.html' %} 
         </div>
+      </div>
+     </div>
     </div>
 </div>
 {% endblock content %}
