@@ -34,7 +34,8 @@ def courses(request):
 def profile(request, user_id):
     user = User.objects.get(pk=int(user_id))
     owned_courses = Courses.objects.filter(owner=int(user_id))
-    users_courses = UsersCourses.objects.filter(user=int(user_id))
+    users_courses = UsersCourses.objects.filter(user_id=int(user_id))
+    
     return render(request, 'profile.html', {"user":user,
                                             "owned_courses":owned_courses,
                                             "users_courses":users_courses})
