@@ -1,52 +1,53 @@
 {% extends 'layout.html' %}
 {% block content %}
 <div class="row" style="background-color: var(--custom-secondary-color); margin-top: 20px;">
-  <div class="text-white" style="margin: 20px; text-align: center;">
+  <div class="text-white" style="margin-top: 20px; margin-bottom:20px; text-align: center;">
       <h1>Sign Up</h1>
       <p></p>
   </div>
 </div>
- 	{% if messages %}
-		{% for message in messages %}
-			{% if message.tags == 'success' %}
-				<div class="alert alert-success" role="alert" style="color: green">
-					{{ message }}
-				</div>
-			{% elif message.tags == 'error' %}
-				<div class="alert alert-danger" role="alert" style="color: red">
-					{{ message }}
-				</div>
-			{% endif %}
-		{% endfor %}
-	{% endif %}
-        <form method="post">
-	      {% csrf_token %}
-        <div class="col-md-8" style="padding: 0px; margin-left: auto; margin-right: auto;">
-          <div class="d-flex flex-column align-items-center" style="margin-top: 20px;">
-            <div class="mb-3">
-              <input class="form-control" type="text" name="neptun" id="neptun" placeholder="Neptun code" required>
-            </div>
-            <div class="mb-3">
-              <input class="form-control" type="text" name="first_name" id="first_name" placeholder="First name" required>
-            </div>
-            <div class="mb-3">
-              <input class="form-control" type="text" name="last_name" id="last_name" placeholder="Last name" required>
-            </div>
-            <div class="mb-3">
-              <input class="form-control" type="text" name="email" id="email" placeholder="Email" required>
-            </div>
-            <div class="mb-3">
-              <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
-            </div>
-            <div class="mb-3">
-              <button class="btn btn-secondary d-block w-100" style="background-color: var(--custom-secondary-color);" type="submit" value="Register">
-                Register
-              </button>
-            </div>
+<div class="container" style="padding: 20px">
+  <div class="row">
+    <form method="post">
+            {% if messages %}
+              {% for message in messages %}
+                {% if message.tags == 'success' %}
+                  <div class="alert alert-success" role="alert" style="color: green">
+                    {{ message }}
+                  </div>
+                {% elif message.tags == 'error' %}
+                  <div class="alert alert-danger" role="alert" style="color: red">
+                    {{ message }}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+	    {% csrf_token %}
+      <div class="col-md-8" style="padding: 0px; margin-left: auto; margin-right: auto;">
+        <div class="d-flex flex-column align-items-center" style="margin-top: 20px;">
+          <div class="mb-3">
+            <input class="form-control" type="text" name="neptun" id="neptun" placeholder="Neptun code" required>
+          </div>
+          <div class="mb-3">
+            <input class="form-control" type="text" name="first_name" id="first_name" placeholder="First name" required>
+          </div>
+          <div class="mb-3">
+            <input class="form-control" type="text" name="last_name" id="last_name" placeholder="Last name" required>
+          </div>
+          <div class="mb-3">
+            <input class="form-control" type="text" name="email" id="email" placeholder="Email" required>
+          </div>
+          <div class="mb-3">
+            <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-secondary d-block w-100" style="background-color: var(--custom-secondary-color);" type="submit" value="Register">
+              Register
+            </button>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </div>
 
