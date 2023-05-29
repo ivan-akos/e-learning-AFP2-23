@@ -75,6 +75,8 @@ Adatbázis: Mysql
 ### 6.1 Hardver topológia
 
 ### 6.2 Fejlesztő eszközök
+ - Visual Studio Code
+ - phpMyAdmin
 
 ## 7. Architekturális terv
 - A projektek webalkalmazásként valósítjuk meg
