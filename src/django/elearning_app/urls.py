@@ -16,4 +16,7 @@ urlpatterns = [
     path('course/<int:course_id>/',views.course, name='course'),
     path("update_course/<int:course_id>/", views.update_course, name="update_course"),
     re_path(r'^login_wall/?$', views.login_wall, name='login_wall'),
+    path('users/', views.list_users, name='list_users'),
+    path('users/update/<int:user_id>/', views.update_user, name='update_user'),
+    path('users/delete/<int:user_id>/', views.user_delete, name='user_delete'),
 ]   
