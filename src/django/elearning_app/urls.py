@@ -9,10 +9,11 @@ urlpatterns = [
     re_path(r'^courses/?$', views.courses, name='courses'),
     re_path(r'^signup/?$', views.signup, name='signup'),
     re_path(r'^login/?$', views.login, name='login'),
-    re_path(r'^logout/?$', LogoutView.as_view(), name='logout'),
+    path("profile/<int:user_id>/", views.profile, name="profile"),
+    re_path(r'^logout/?$', views.logout, name='logout'),
     re_path(r'^about/?$', views.about, name='about'),
     re_path(r'^contact/?$', views.contact, name='contact'),
     path('course/<int:course_id>/',views.course, name='course'),
-    re_path(r'^create_course/?$', views.create_course, name='create_course'),
+    path("update_course/<int:course_id>/", views.update_course, name="update_course"),
     re_path(r'^login_wall/?$', views.login_wall, name='login_wall'),
 ]   

@@ -1,12 +1,14 @@
-	<div>
-		<h5>Create lesson:</h5>
+	<div style="margin-top: 5%; margin-bottom: 5%">
+		<h3>Create lesson:</h3>
 		<form method="post">
 		  {% csrf_token %}
-		  <label for="name">Name:</label><br>
-		  <input type="text" id="name" name="name" required><br>
-		  <label for="body">Body:</label><br>
-		  <textarea id="body" name="body" required></textarea><br>
+		  <div class="mb-3">
+            <input class="form-control" type="text" name="name" placeholder="Name" required>
+          </div>
+		  <div class="mb-3">
+			<div><textarea class="form-control" type="text" name="body" rows="4" placeholder="Body"></textarea></div>
+          </div>
 		  <br>
-		  <input type="submit" value="Create">
+		  <input class="btn btn-secondary" style="background-color: var(--custom-secondary-color);" type="submit" value="Create"></input>
 		</form>
 	</div>
