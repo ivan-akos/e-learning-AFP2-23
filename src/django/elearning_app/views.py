@@ -13,10 +13,8 @@ def temp_logout(request):
 def temp_logout(request):
     return render(request, 'temp_logout.html')
 
-def index(request):
-    return home(request)
-
 def home(request):
+    print(request.user)
     messages._queued_messages = []
     forms.login(request)
     return render(request, 'home.html')
