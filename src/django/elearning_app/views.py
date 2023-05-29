@@ -80,3 +80,40 @@ def contact(request):
 def login_wall(request):
     messages._queued_messages = []
     return render(request, 'login_wall.html')
+    
+def list_users(request):   
+    users = User.objects.all()
+    return render(request, 'users.html', {'users': users})
+
+def update_user(request, user_id):
+    user = User.objects.get(id=user_id)
+    if not request.user.is_authenticated:
+        return render(request, 'login_wall.html')
+    
+    if request.method == 'POST':
+        username = request.POST['username']
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        email = request.POST['email']
+
+        user.username = username
+        user.first_name = first_name
+        user.last_name = last_name
+        user.email = email
+        user.save()
+
+        messages.success(request, 'User updated successfully')
+        return redirect('list_users')
+
+    return render(request, 'update_user.html', {'user': user})
+
+
+def user_delete(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+
+    if request.method == 'POST':
+        user.delete()
+        messages.success(request, 'User deleted successfully')
+        return redirect('list_users')
+
+    return render(request, 'user_delete.html', {'user': user})
