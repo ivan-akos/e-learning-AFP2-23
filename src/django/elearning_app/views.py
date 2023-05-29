@@ -10,9 +10,6 @@ from . import forms
 def temp_logout(request):
     return render(request, 'temp_logout.html')
 
-def temp_logout(request):
-    return render(request, 'temp_logout.html')
-
 def home(request):
     print(request.user)
     messages._queued_messages = []
