@@ -32,7 +32,7 @@ class Lessons(models.Model):
     course = models.ForeignKey(Courses, models.CASCADE, db_column='course')
     name = models.CharField(max_length=45)
     nth = models.IntegerField()
-    body = models.CharField(max_length=100, blank=True, null=True)
+    body = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = True

@@ -4,7 +4,7 @@ from django.contrib.auth.views import LogoutView
 
 
 urlpatterns = [
-    re_path(r'^$', views.index, name="index"),
+    re_path(r'^$', views.home, name="index"),
     re_path(r'^home/?$', views.home, name='home'),
     re_path(r'^courses/?$', views.courses, name='courses'),
     re_path(r'^signup/?$', views.signup, name='signup'),
@@ -16,5 +16,4 @@ urlpatterns = [
     path('course/<int:course_id>/',views.course, name='course'),
     path("update_course/<int:course_id>/", views.update_course, name="update_course"),
     re_path(r'^login_wall/?$', views.login_wall, name='login_wall'),
-    re_path(r'^temp_logout/?$', views.temp_logout, name='temp_logout')
 ]   

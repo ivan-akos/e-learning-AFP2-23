@@ -6,3 +6,4 @@ djangorestframework
 django-seed
 django-bootstrap-v5
 mysqlclient
+psycopg2

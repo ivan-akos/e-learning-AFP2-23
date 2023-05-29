@@ -7,15 +7,10 @@ from django.shortcuts import redirect
 from django.contrib import auth
 from .models import *
 from . import forms
-from django.contrib import auth
-
-def temp_logout(request):
-    return render(request, 'temp_logout.html')
-
-def index(request):
-    return home(request)
 
 def home(request):
+    print(request.user)
+    messages._queued_messages = []
     forms.login(request)
     if request.user.is_authenticated:
         users_courses = UsersCourses.objects.filter(user_id=int(request.user.id))
@@ -49,6 +44,8 @@ def update_course(request, course_id):
     course = get_object_or_404(Courses, pk=course_id)
     if request.method == 'POST':
         forms.process_course_form(request, course)
+    if hasattr(course, 'is_deleted'):
+        return redirect('courses')
     return render(request, 'update_course.html', {"Course":course})
 
 def signup(request):
@@ -63,7 +60,7 @@ def login(request):
 
 def logout(request):
     auth.logout(request)
-    return home(request)
+    return redirect('/')
 
 def about(request):
     return render(request, 'about.html')

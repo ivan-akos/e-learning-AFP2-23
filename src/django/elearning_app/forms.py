@@ -6,6 +6,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib import messages
 from django.db.models import Max
 from django.db import IntegrityError
+from django.shortcuts import redirect
 import hashlib
 import random
 import string
@@ -94,7 +95,8 @@ def process_course_form(request, course):
         model = request.POST.get('model')
         if model == 'course':
             course.delete()
-            return redirect('courses')
+            course.is_deleted = True
+            return
         elif model == 'lesson':
             lesson = Models.Lessons.objects.get(pk=request.POST.get('to_delete'))
             lesson.delete()
