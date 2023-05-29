@@ -56,7 +56,7 @@ def login(request):
 def create_course(request):
     if request.method == 'POST':
         course = Models.Courses(
-                code = ''.join(random.choice(string.ascii_lowercase + string.digits) for i in range(11)),
+                code = Models.Courses.generate_code(),
                 name = request.POST.get('name'),
                 owner = request.user
             )
