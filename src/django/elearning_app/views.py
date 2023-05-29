@@ -5,6 +5,7 @@ import django.contrib.auth as auth
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
 from django.contrib import auth
+from django.db import IntegrityError
 from .models import *
 from . import forms
 
@@ -50,7 +51,10 @@ def update_course(request, course_id):
 
 def signup(request):
     messages._queued_messages = []
-    forms.register(request)
+    try:
+        forms.register(request)
+    except IntegrityError:
+        messages.error(request, 'User already exists.')
     return render(request, 'signup.html') 
 
 def login(request):
