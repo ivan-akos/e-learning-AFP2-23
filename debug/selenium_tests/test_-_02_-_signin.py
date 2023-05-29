@@ -5,12 +5,12 @@ from exceptions import TestFailure
 import config
 
 def main(driver):
-	# Navigate to sing up
+	# Navigate to login
 	driver.find_element(By.ID, 'login').click()
 	# Enter data
 	driver.find_element(By.ID, 'neptun').send_keys(config.LOGIN_NAME)
 	driver.find_element(By.ID, 'password').send_keys(config.LOGIN_PASSWORD)
-	# Registration attempt
+	# Login attempt
 	driver.find_element(By.ID, 'login-submit').click()
 	# Test success
 	#	the logout button appearing is assumed to be a good enough indicator
