@@ -2,3 +2,4 @@ auth.txt
 docs/media/elearning.mwb.bak
 **/__pycache__/
 src/django/venv/
+*.orig
