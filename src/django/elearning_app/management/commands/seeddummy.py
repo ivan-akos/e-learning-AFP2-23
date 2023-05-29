@@ -30,7 +30,7 @@ class Command(BaseCommand):
 		#
 		seeder.add_entity(Courses, 10, {
 			'owner': lambda x: seeder.faker.random_element(User.objects.all()),
-			'code': Courses.generate_code()
+			'code': lambda x: Courses.generate_code()
 		})
 		#
 		seeder.add_entity(UsersCourses, 10, {
