@@ -8,23 +8,23 @@
     </div>
 </div>
 <div class="container" style=" padding: 20px">
-    <div class="row" ">
+    <div class="row">
         <div class="col-md-8" style="padding: 0px; margin-left: auto; margin-right: auto;">
             {% include 'components/create_course.html' %} 
-            <table class="table table-striped table-hover">
+            <table class="table table-striped table-hover" id="course-table">
                 <thead>
                     <tr>
-                        <th>Code</th>
-                        <th>Course Name</th>
-                        <th>Owner</th>
+                        <th class="course-code">Code</th>
+                        <th class="course-name">Course Name</th>
+                        <th class="course-owner">Owner</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for course in courses_list  %}
                     <tr>
-                        <td>{{course.code}}</td>
-                        <td><a href="{% url 'course' course.id %}">{{course.name}}</a></td>
-                        <td><a href="{% url 'profile' course.owner.id %}">{{course.owner}}</td>
+                        <td class="course-code">{{course.code}}</td>
+                        <td class="course-name"><a href="{% url 'course' course.id %}">{{course.name}}</a></td>
+                        <td class="course-owner"><a href="{% url 'profile' course.owner.id %}">{{course.owner}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
