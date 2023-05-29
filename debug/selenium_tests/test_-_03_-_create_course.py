@@ -4,6 +4,10 @@ from selenium.webdriver.common.by import By
 from exceptions import TestFailure
 import config
 
+depends_on = [
+	'test_-_02_-_signin.py'
+]
+
 def main(driver):
 	# Navigate to course list
 	driver.find_element(By.ID, 'courses-redirect').click()
