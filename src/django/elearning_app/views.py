@@ -44,6 +44,8 @@ def update_course(request, course_id):
     course = get_object_or_404(Courses, pk=course_id)
     if request.method == 'POST':
         forms.process_course_form(request, course)
+    if hasattr(course, 'is_deleted'):
+        return redirect('courses')
     return render(request, 'update_course.html', {"Course":course})
 
 def signup(request):
