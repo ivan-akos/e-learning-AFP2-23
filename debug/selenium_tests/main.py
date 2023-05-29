@@ -8,9 +8,14 @@ import config
 
 driver = webdriver.Chrome(executable_path=config.CHROME_BINARY_PATH)
 
-for t in glob.glob(os.path.dirname(__file__) + '/' + 'test*'):
-	driver.get(config.TARGET_URL)	# Allways reset to index
+tests = [
+			'test_-_01_-_signup.py',
+			'test_-_02_-_signin.py',
+]
+
+for t in tests:
 	t = os.path.basename(t).rsplit(".", 1)[0]
+	driver.get(config.TARGET_URL)	# Allways reset to index
 	print('Running ', t, ': ', end='', sep='')
 	m = importlib.import_module(t)
 	try:
