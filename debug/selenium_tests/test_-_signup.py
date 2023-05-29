@@ -17,7 +17,7 @@ def main(driver):
 	driver.find_element(By.ID, 'email').send_keys('selenium@noreply.com')
 	driver.find_element(By.ID, 'password').send_keys('selenium')
 	# Registration attempt
-	driver.find_element(By.ID, 'register').click()
+	driver.find_element(By.ID, 'register-submit').click()
 	# Test success
 	success_message_count = len(driver.find_elements(By.CLASS_NAME, 'alert-success'))
 	if success_message_count != base_success_message_count+1:
