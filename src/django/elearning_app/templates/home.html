@@ -5,6 +5,19 @@
 
 <div class="container" style=" padding: 20px">
     <div class="row">
+     {% if messages %}
+		{% for message in messages %}
+			{% if message.tags == 'success' %}
+				<div class="alert alert-success" role="alert" style="color: green">
+					{{ message }}
+				</div>
+			{% elif message.tags == 'error' %}
+				<div class="alert alert-danger" role="alert" style="color: red">
+					{{ message }}
+				</div>
+			{% endif %}
+		{% endfor %}
+	{% endif %}
         <div class="col-md-8" style="padding: 0px; margin-left: auto; margin-right: auto;">
             <div class="row">
                 {% if user.is_authenticated%}
