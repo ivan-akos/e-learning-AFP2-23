@@ -48,29 +48,24 @@ def login(request):
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            messages.success(request, 'Sikeres bejelentkezés.')
+            messages.success(request, 'Login successful.')
         else:
-            messages.error(request, 'Sikertelen bejelentkezés.')
+            messages.error(request, 'Login error.')
             
 @csrf_exempt
 def create_course(request):
     if request.method == 'POST':
-        course = Models.Courses(
-                code = Models.Courses.generate_code(),
-                name = request.POST.get('name'),
-                owner = request.user
-            )
         
         try:
+            course = Models.Courses(
+                    code = Models.Courses.generate_code(),
+                    name = request.POST.get('name'),
+                    owner = request.user
+                )
             course.save()
-#            course = Models.Courses(
-#                    code = ''.join(random.choice(string.ascii_lowercase + string.digits) for i in range(11)),
-#                    name = request.POST.get('name'),
-#                    owner = request.user.id
-#                )
-            messages.success(request, 'New course created')
+            messages.success(request, 'New course created.')
         except:
-            messages.error(request, 'Something is wrong')
+            messages.error(request, 'Something is wrong.')
             
 @csrf_exempt
 def create_lesson(request, course):
@@ -82,9 +77,9 @@ def create_lesson(request, course):
                 )
         try:
             lesson.save()
-            messages.success(request, 'New lesson created')
+            messages.success(request, 'New lesson created.')
         except:
-            messages.error(request, 'Something is wrong')
+            messages.error(request, 'Something is wrong.')
 
 def process_course_form(request, course):
     operation = request.POST.get('operation')
@@ -100,7 +95,7 @@ def process_course_form(request, course):
         elif model == 'lesson':
             lesson = Models.Lessons.objects.get(pk=request.POST.get('to_delete'))
             lesson.delete()
-            messages.success(request, 'Óra törölve.')
+            messages.success(request, 'Lesson deleted.')
         return
     if operation == 'update':
         model = request.POST.get('model')

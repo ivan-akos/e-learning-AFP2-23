@@ -10,8 +10,6 @@ from .models import *
 from . import forms
 
 def home(request):
-    print(request.user)
-    messages._queued_messages = []
     forms.login(request)
     if request.user.is_authenticated:
         users_courses = UsersCourses.objects.filter(user_id=int(request.user.id))
@@ -21,6 +19,7 @@ def home(request):
     return render(request, 'home.html', {"users_courses":users_courses})
 
 def courses(request):
+    messages._queued_messages = []
     if not request.user.is_authenticated:
         return render(request, 'login_wall.html')
     forms.create_course(request)
@@ -28,6 +27,7 @@ def courses(request):
     return render(request, 'courses.html', {"courses_list":courses_list})
 
 def profile(request, user_id):
+    messages._queued_messages = []
     user = User.objects.get(pk=int(user_id))
     owned_courses = Courses.objects.filter(owner=int(user_id))
     users_courses = UsersCourses.objects.filter(user_id=int(user_id))
@@ -37,11 +37,13 @@ def profile(request, user_id):
                                             "users_courses":users_courses})
 
 def course(request, course_id):
+    messages._queued_messages = []
     course = get_object_or_404(Courses, pk=course_id)
     forms.create_lesson(request, course)
     return render(request, 'course.html', {"Course":course})
 
 def update_course(request, course_id):
+    messages._queued_messages = []
     course = get_object_or_404(Courses, pk=course_id)
     if request.method == 'POST':
         forms.process_course_form(request, course)
@@ -64,13 +66,17 @@ def login(request):
 
 def logout(request):
     auth.logout(request)
+    messages.success(request, 'Logged out.')
     return redirect('/')
 
 def about(request):
+    messages._queued_messages = []
     return render(request, 'about.html')
 
 def contact(request):
+    messages._queued_messages = []
     return render(request, 'contact.html')
 
 def login_wall(request):
+    messages._queued_messages = []
     return render(request, 'login_wall.html')
